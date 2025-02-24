@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>aquarium tickets</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"; rel="stylesheet">
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+	<style>
+
+		.header {
+			background-color:#3656c9 ;
+			border-style: double;
+			border-spacing: 6px;
+			text-align: center;
+		}
+
+		.img {
+			width: 40px;
+			height: 30px;
+			align-content: center;
+		}
+
+		body {
+			
+			background-image: url(aquarium.png);
+			font-family: Gill sans  ;
+			background-size:cover;
+background-attachment: fixed;
+background-repeat: no-repeat;
+			
+
+
+
+		}
+
+		label {
+			font-size: 20px;
+		}
+
+		.text {
+			border-spacing: 5px;
+			border-style: double;
+			background-color: #36a5eb;
+		}
+
+		.text2 {
+			border-spacing: 5px;
+			border-style: double;
+			background-color: #36a5eb;
+		}
+	</style>
+</head>
+<body>
+
+<div class="header">
+<h1 class="mx-auto d-block">Marteray Bay Aquarium</h1>
+</div>
+
+<br>
+<br>
+
+
+
+
+<br><br>
+
+<div class="container">
+	<div class="text-center">
+		<div class="text">
+<details>
+<summary>Information needed</summary>
+<i> Please answer everything.</i>
+<form>
+	<label>Please put your full name here</label> <input type="text" id="fullname" class="form-control" placeholder="input here.....">
+	<br>
+	<label>Please put your email address here</label> <input type="email" id="email" class="form-control" placeholder="input here.....">
+	<br>
+
+ <i> <button type="button" onclick ="check_info()"class="btn btn-lg btn-light"> Submit </button></i>
+
+</form>
+</details>
+</div>
+</div>
+</div>
+
+<br>
+<br>
+
+<div class="container">
+	<div class="text-center">
+		<div class="text2">
+	<details>
+<summary>Packages</summary>
+<i> This is where to decide if you want special perks</i>
+		<form>
+			<label>Please Choose</label>
+
+		<select class="form-select" id="ticket1">
+			<option value="750">Basic Aquarium</option>
+			<option value="600">Aquarium + free Gift Shop Items</option>
+			<option value="600">Aquarium + free Gift Shop Items + Special Tour</option>
+		</select>
+
+	<br>
+
+		<label>Choose an option : </label>
+	<select class="form-select" id="discount">
+		<option value="none">Regular</option>
+		<!----- Discount percent (0.2 = 20 percent)-----> 
+		<option value="0.2">PWD/SC/STUDENT </option>
+	</select>
+	<br>
+
+
+		 <i> <button type="button" onclick ="check_pricing()"class="btn btn-lg btn-light"> Submit </button></i>
+
+	</select>
+</form>
+</details>
+</div>
+</div>
+</div>
+
+<br>
+<br>
+
+<div class="container">
+	<div class="text-center">
+		<div class="text">
+	<details>
+<summary>Print your Aquarium Ticket!</summary>
+
+<br> 
+
+<i> <button type="button" onclick ="ticket_print()"class="btn btn-lg btn-light">Print Ticket</button></i>
+<i> <button type="button" onclick ="location.reload()"class="btn btn-lg btn-light">Print Another Ticket</button></i>
+
+
+
+
+</details>
+</div>
+</div>
+</div>
+
+
+<script>
+
+	
+	function check_pricing() {
+	var tck1=document.getElementById ('ticket1').value;
+	var disc1 = document.getElementById ('discount').value;
+	var final_rate= tck1- (disc1 * tck1);
+
+	window.alert ('Your ticket price is ' + final_rate);
+
+}
+
+
+</script>
+
+<script>
+	function check_info() {
+		var name1 = document.getElementById ('fullname').value;
+		var email1 = document.getElementById ('email').value;
+
+	window.alert('Your name is' + ' ' + name1 + ' ' + 'And your email is' + ' ' + email1);
+}
+</script>
+
+<script>
+	
+	function ticket_print(){
+		window.alert("Thank You for buying a ticket to Marteray Bay Aquarium! We hope you have a fun time!");
+
+}
+
+</script>
+</body>
+</html>
